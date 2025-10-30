@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #faf8ef;
+    color: #776e65;
+    text-align: center;
+}
+
+.container {
+    width: 400px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 80px;
+    margin: 20px 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.score-container {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#new-game-button {
+    background-color: #8f7a66;
+    color: #f9f6f2;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.game-board {
+    width: 400px;
+    height: 400px;
+    background-color: #bbada0;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.tile {
+    width: 85px;
+    height: 85px;
+    background-color: #cdc1b4;
+    border-radius: 5px;
+    font-size: 40px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 100ms ease-in-out;
+}
+
+.tile.merged {
+    animation: merge-animation 200ms ease-in-out;
+}
+
+@keyframes merge-animation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.tile[data-value="2"] { background-color: #eee4da; color: #776e65; }
+.tile[data-value="4"] { background-color: #ede0c8; color: #776e65; }
+.tile[data-value="8"] { background-color: #f2b179; color: #f9f6f2; }
+.tile[data-value="16"] { background-color: #f59563; color: #f9f6f2; }
+.tile[data-value="32"] { background-color: #f67c5f; color: #f9f6f2; }
+.tile[data-value="64"] { background-color: #f65e3b; color: #f9f6f2; }
+.tile[data-value="128"] { background-color: #edcf72; color: #f9f6f2; }
+.tile[data-value="256"] { background-color: #edcc61; color: #f9f6f2; }
+.tile[data-value="512"] { background-color: #edc850; color: #f9f6f2; }
+.tile[data-value="1024"] { background-color: #edc53f; color: #f9f6f2; }
+.tile[data-value="2048"] { background-color: #edc22e; color: #f9f6f2; }
+
+.instructions {
+    margin-top: 20px;
+}
